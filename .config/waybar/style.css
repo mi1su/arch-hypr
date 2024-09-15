@@ -1,0 +1,125 @@
+/* Общие стили */
+* {
+	font-family: JetBrainsMono, Symbols Nerd Font;
+	font-weight: bold;
+	font-size: 14px;
+	min-height: 0;
+}
+
+@define-color bg #1e1e2e;
+@define-color bg2 #181825;
+@define-color fg #cdd6f4;
+@define-color pink #f5c2e7;
+@define-color green #a6e3a1;
+@define-color fl #f2cdcd;
+@define-color blue #89b4fa;
+@define-color red #eba0ac;
+@define-color vl #cba6f7;
+@define-color yellow #fab387;
+
+
+/*
+    Общая полоска
+*/
+window#waybar {
+	background-color: transparent;
+	border: none;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+/* Общие стили для всех модулей */
+#custom-menu,
+#workspaces,
+#window,
+#tray,
+#submap,
+#clock,
+#custom-weather,
+#language,
+#keyboard,
+#pulseaudio,
+#network,
+#bluetooth,
+#memory,
+#cpu,
+#temperature,
+#backlight,
+#battery,
+#custom-power {
+	padding: 2px 10px;
+	margin: 5px;
+	color: @fg;
+	background-color: @bg2;
+	border: none;
+	border-radius: 30px;
+}
+
+/* Hover эффекты */
+#custom-menu:hover,
+#custom-menu:hover {
+	color: @fl;
+}
+
+#custom-power:hover {
+	color: @red;
+}
+
+#pulseaudio.muted {
+	color: @red;
+}
+
+
+/* Tooltip стили */
+tooltip {
+	background: @bg;
+	margin: 20px;
+	padding: 15px;
+	border: 20px solid rgba(100, 114, 125, 0);
+	border-radius: 10px;
+}
+
+#workspaces button {
+	padding: 0 5px;
+	background-color: transparent;
+	color: @fg;
+}
+
+#workspaces button:hover {
+	color: @yellow;
+	background-color: transparent;
+	border: 2px solid @yellow;
+	box-shadow: 0 0 5px @yellow;
+}
+
+#workspaces button.focused {
+	color: @yellow;
+	background-color: @bg;
+	border: 2px solid @yellow;
+	/* Добавляем рамку */
+	box-shadow: 0 0 5px @yellow;
+	/* Добавляем тень */
+}
+
+#workspaces button.urgent {
+	color: @red;
+	background-color: @red;
+	font-weight: bold;
+	/* Делаем текст жирным */
+}
+
+/* Стили для модулей при наведении мыши */
+#clock:hover,
+#pulseaudio:hover,
+#network:hover,
+#memory:hover,
+#cpu:hover,
+#battery:hover,
+#custom-power:hover {
+	border: 2px solid white;
+	/* Белая рамка */
+	box-shadow: 0 0 5px white;
+	/* Белая тень */
+}

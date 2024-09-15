@@ -1,0 +1,77 @@
+# ОСНОВНЫЕ ПАРАМЕТРЫ
+show=drun                  # способ поиска исполняемых файлов: run, drun, dmenu
+; mode=drun                  # режим работы: drun, run, window, ssh
+prompt=                    # надпись в строке поиска
+term=kitty                 # терминал по умолчанию
+
+# РАЗМЕРЫ И ПОЛОЖЕНИЕ
+width=30%                  # ширина
+#height=400                # высота
+lines=8                    # задает высоту в количестве строк вместо пикселей
+#x=660                     # положение по x
+#y=340                     # положение по y
+#xoffset=OFFSET            # смещение по x
+#yoffset=OFFSET            # смещение по y
+location=center            # положение wofi: center 0, top_left 1, top 2, top_right 3, right 4, bottom_right 5, bottom 6, bottom_left 7, left 8
+orientation=vertical       # ориентация: horizontal или vertical
+
+# ПОИСК И СОРТИРОВКА
+insensitive=false          # включает/выключает поиск без учета регистра
+matching=contains          # режим сопоставления: contains или fuzzy
+sort_order=alphabetical    # порядок сортировки: default или alphabetical (по алфавиту)
+#filter_rate=RATE          # скорость обновления результатов в миллисекундах
+#exec_search=true          # поиск по двум энтерам
+#dynamic_lines=true        # сокращение под результаты
+
+# ВНЕШНИЙ ВИД
+gtk_dark=true              # включает темный вариант темы, если такая есть
+hide_scroll=true           # скрыть полосу прокрутки
+#no_actions=true           # скрыть подменю
+#hide_search=false         # скрывать панель поиска
+allow_markup=true          # включает/выключает поддержку разметки Pango
+show_icons=true
+allow_images=true          # включает/выключает отображение изображений
+image_size=20              # размер иконок
+
+# ОТОБРАЖЕНИЕ РЕЗУЛЬТАТОВ
+#columns=2                 # количество колонок
+line_wrap=word             # режим переноса строки
+#password=*                # заменяет все на указанный символ, аля пароль
+
+# СЛОЙ И ТИП ОКНА
+layer=overlay              # слой, на котором будет запущен wofi: background, bottom, top, overlay
+#normal_window=false       # если поставить true, то запустит wofi в обычном окне
+
+# КЛАВИШИ УПРАВЛЕНИЯ
+#key_up=KEY                # кнопка перехода вверх
+#key_down=KEY              # кнопка перехода вниз
+#key_left=KEY              # кнопка перехода влево
+#key_right=KEY             # кнопка перехода вправо
+#key_forward=KEY           # кнопка перехода вперед
+#key_backward=KEY          # кнопка перехода назад
+#key_submit=KEY            # кнопка ввода
+#key_exit=KEY              # кнопка выхода
+#key_pgup=KEY              # кнопка перехода на одну страницу вверх
+#key_pgdn=KEY              # кнопка перехода на одну страницу вниз
+key_expand=Tab             # кнопка раскрытия выбора (например, для выбора нескольких файлов)
+#key_hide_search=KEY       # кнопка скрытия панели поиска
+
+# ДОПОЛНИТЕЛЬНЫЕ ПАРАМЕТРЫ
+always_parse_args=false    # включает/выключает обработку аргументов командной строки
+show_all=true              # включает/выключает отображение всех результатов, даже если они не соответствуют поисковому запросу
+print_command=true         # включает/выключает вывод команды в терминал перед ее выполнением
+display_generic=false      # включает/выключает отображение общего имени приложения вместо его имени, указанного в .desktop файле
+
+# ПУТИ К ФАЙЛАМ
+#cache_file=PATH           # указать кэш файл
+#color=PATH                # путь к файлу с цветами
+#colors=PATH               # путь к файлу с цветами (более гибкая настройка)
+
+# ПРОЧЕЕ
+#parse_search=BOOL         # связано с обработкой специальных последовательностей в строке поиска
+#search=STRING             # указывает, что нужно искать сразу при открытии
+#monitor=STRING            # монитор, на котором нужно запускать wofi
+#halign=center             # выравнивание по горизонтали: start, end или center
+#content_halign=center     # выравнивание содержимого по горизонтали: start, end или center
+#valign=center             # выравнивание по вертикали: start, end или center
+#global_coords=false       # включает/выключает использование глобальных координат расположения
