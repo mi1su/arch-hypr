@@ -6,16 +6,17 @@
 @define-color entry-bg-hover rgba(88, 69, 149, 0.6); /* Фон выделенного элемента списка */
 @define-color entry-bg-even rgba(41, 36, 66, 0.5); /* Фон четных строк */
 @define-color border-color rgba(51, 204, 255, 0.5); /* Цвет границы */
+@define-color fg rgba(216, 222, 233, 0.9); /* Основной цвет текста */
+@define-color fg_2 rgba(229, 233, 240, 0.9); /* Вторичный цвет текста */
+@define-color text-color #ffffff; /* Цвет текста */
 @define-color unselected-text-color rgba(216, 222, 233, 0.7); /* Цвет текста по умолчанию */
-@define-color text-color rgba(216, 222, 233, 0.9); /* Основной цвет текста */
-@define-color text_fg_2 rgba(229, 233, 240, 0.9); /* Вторичный цвет текста */
 
 
 /*  Общие стили - параметры для всего  */
 * {
-  font-size: medium;
   font-family: JetBrainsMono;
   color: @text-color;
+  /* background: @cosmic-purple; */
   backdrop-filter: blur(10px);
 }
 
@@ -53,10 +54,12 @@
 }
 
 /* Иконки */
-#img {
+#image {
   margin-right: .25em;
   margin-left: .25em;
-  background-color: transparent;
+  /* background-color: transparent; */
+  /* min-width: 24px;
+  min-height: 24px; */
 }
 
 /* Полоса прокрутки */
@@ -75,17 +78,28 @@
 #entry:selected {
   border-radius: 5px;
   background-color: @entry-bg-hover;
+  color: @text-color;
 }
+
+/* Чётные строки */
+/* #entry:nth-child(even) {
+  background-color: @entry-bg-even;
+} */
+
+/* Фон для вложенных списков */
+/* #entry.nested-list {
+  background-color: @cosmic-purple;
+} */
 
 /* Текст */
 #text {
   margin: 2px;
-  color: @unselected-text-color;
+  color: @text-color;
 }
 
 /*  Цвет выделенного текста */
 #text:selected {
-  color: @text_fg_2;
+  color: @text-color;
 }
 
 /* Невыделенный текст */
