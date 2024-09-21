@@ -1,8 +1,7 @@
 # ОСНОВНЫЕ ПАРАМЕТРЫ
-show=drun                  # способ поиска исполняемых файлов: run, drun, dmenu
-; mode=drun                  # режим работы: drun, run, window, ssh
-prompt=                    # надпись в строке поиска
-term=kitty                 # терминал по умолчанию
+mode=drun                   # режим работы: drun, run, dmenu (способ поиска исполняемых файлов)
+#prompt=                    # надпись в строке поиска
+#term=kitty                 # терминал по умолчанию
 
 # РАЗМЕРЫ И ПОЛОЖЕНИЕ
 width=30%                  # ширина
@@ -29,9 +28,9 @@ hide_scroll=true           # скрыть полосу прокрутки
 #no_actions=true           # скрыть подменю
 #hide_search=false         # скрывать панель поиска
 allow_markup=true          # включает/выключает поддержку разметки Pango
-show_icons=true
+#show_icons=true
 allow_images=true          # включает/выключает отображение изображений
-image_size=20              # размер иконок
+image_size=24              # размер иконок
 
 # ОТОБРАЖЕНИЕ РЕЗУЛЬТАТОВ
 #columns=2                 # количество колонок
