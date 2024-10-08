@@ -1,0 +1,12 @@
+set mouse=a
+set number
+set relativenumber
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set smarttab
+syntax on
+set termguicolors
+colorscheme desert
+set wildmenu

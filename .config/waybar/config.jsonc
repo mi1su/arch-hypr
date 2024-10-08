@@ -34,7 +34,7 @@
 	"custom/menu": {
 		"format": "{icon}",
 		"format-icons": "",
-		"on-click": "wofi --show",
+		"on-click": "wofi --show drun",
 		"escape": true,
 		"tooltip": false
 	},

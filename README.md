@@ -113,6 +113,12 @@ yay -S ttf-material-design-iconic-font
 
 ---
 
+Еще для самого hyprland я использую 
+
+exec-once = gsettings set org.gnome.desktop.interface cursor-theme 'DeppinDark-cursors'
+exec-once = gsettings set org.gnome.desktop.interface gtk-theme 'Orchis-dark'
+exec-once = gsettings set org.gnome.desktop.interface icon-theme 'Rowaita-Adw-Light'
+
 ## Настройка
 
 После скачивания конфигурации вам нужно внести некоторые изменения, связанные с вашими параметрами:
