@@ -107,14 +107,14 @@
 				"",
 				""
 			],
-			"mute": "󰝟 ",
+			"mute": " ",
 			"headphone": " ",
 			"phone": " ",
 			"portable": " "
 		},
 		"format-bluetooth": "{volume}% {icon} ",
 		"format-bluetooth-muted": " {icon} MUT",
-		"format-muted": "󰝟 MUT",
+		"format-muted": " MUT",
 		"format-source": "  {volume}%",
 		"format-source-muted": "  MUT",
 		"on-click": "pavucontrol",
@@ -125,7 +125,7 @@
 	"network": {
 		"interval": 5,
 		"format-wifi": "<span color='#b39ddb'></span> {signalStrength}",
-		"format-ethernet": "<span color='#b39ddb'></span>",
+		"format-ethernet": "<span color='#b39ddb'></span>",
 		"format-disconnected": "<span color='#b39ddb'></span>",
 		"format-linked": "<span color='#b39ddb'> </span>",
 		"max-length": 50,

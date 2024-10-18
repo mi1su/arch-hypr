@@ -1,0 +1,94 @@
+style {
+    @define-color window-bg rgba(41, 36, 66, 0.6); /* Фон окна ввода */
+    @define-color bg rgba(41, 36, 66, 0.8); /* Фон общего окна */
+    @define-color cosmic-purple rgba(88, 69, 149, 0.7); /* Космический пурпурный */
+    @define-color input-bg rgba(216, 222, 233, 0.2); /* Фон поля ввода */
+    @define-color entry-bg rgba(41, 36, 66, 0.4); /* Фон элементов списка */
+    @define-color entry-bg-hover rgba(88, 69, 149, 0.6); /* Фон выделенного элемента списка */
+    @define-color entry-bg-even rgba(41, 36, 66, 0.5); /* Фон четных строк */
+    @define-color border-color rgba(51, 204, 255, 0.5); /* Цвет границы */
+    @define-color unselected-text-color rgba(216, 222, 233, 0.7); /* Цвет текста по умолчанию */
+    @define-color text-color rgba(216, 222, 233, 0.9); /* Основной цвет текста */
+    @define-color text_fg_2 rgba(229, 233, 240, 0.9); /* Вторичный цвет текста */
+
+    /* Общие стили - параметры для всего */
+    * {
+        font-size: medium;
+        font-family: JetBrainsMono;
+        color: @text-color;
+        backdrop-filter: blur(10px);
+    }
+
+    /* Окно ввода */
+    window {
+        margin: auto;
+        padding: 10px;
+        border-radius: 20px;
+        border: 2px solid @border-color;
+        background-color: @window-bg;
+    }
+
+    /* Параметры для окна ввода */
+    input {
+        margin: 10px 15px;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 15px;
+        border: none;
+        background-color: @input-bg; /* Фон поля ввода */
+        color: @text-color; /* Текст в поле ввода */
+    }
+
+    /* Окно с приложениями */
+    inner-box {
+        background-color: transparent;
+    }
+
+    /* Пространство вокруг окна rofi */
+    outer-box {
+        margin: 5px;
+        padding: 0px;
+        background-color: transparent;
+    }
+
+    /* Иконки */
+    img {
+        margin-right: .25em;
+        margin-left: .25em;
+        background-color: transparent;
+    }
+
+    /* Полоса прокрутки */
+    scroll {
+        background-color: transparent;
+    }
+
+    /* Элементы списка */
+    entry {
+        padding: 5px;
+        border-radius: 15px;
+        background-color: @entry-bg;
+    }
+
+    /* Выделенный пункт */
+    entry:selected {
+        border-radius: 5px;
+        background-color: @entry-bg-hover;
+    }
+
+    /* Текст */
+    text {
+        margin: 2px;
+        color: @unselected-text-color;
+    }
+
+    /* Цвет выделенного текста */
+    text:selected {
+        color: @text_fg_2;
+    }
+
+    /* Невыделенный текст */
+    unselected {
+        color: @unselected-text-color;
+    }
+}

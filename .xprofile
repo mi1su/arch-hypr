@@ -1,0 +1,2 @@
+~/.config/mako/scripts/volume-notifier.sh &
+~/.config/mako/scripts/battery-notifier.sh &
