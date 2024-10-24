@@ -1,0 +1,97 @@
+command_timeout = 2000
+scan_timeout = 1000
+
+format = """
+$username\
+$hostname\
+[](bg:#DA627D fg:#9A348E)\
+$directory\
+[](fg:#DA627D bg:#FCA17D)\
+$git_branch\
+$git_state\
+$git_status\
+[](fg:#FCA170)\
+$fill\
+[](fg:#86BBD8)\
+$cmd_duration\
+$jobs\
+[](fg:#33658A bg:#86BBD8)\
+$time\
+$line_break\
+$python\
+$conda\
+$character
+"""
+
+[username]
+show_always = true
+style_user = "bg:#9A348E"
+style_root = "bg:#9A348E"
+format = '[ $user ]($style)'
+
+[hostname]
+ssh_only = true
+style = "bg:#9A348E"
+format = "[@ $hostname ]($style)"
+trim_at = "-"
+
+[directory]
+style = "bg:#DA627D"
+format = "[ $path ]($style)"
+truncation_length = 10
+fish_style_pwd_dir_length = 2
+
+
+[fill]
+symbol = " "
+
+[character]
+success_symbol = "[❯](bold purple)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+[git_branch]
+symbol = " "
+format = "[ $symbol$branch ]($style)"
+style = "bg:#FCA17D"
+
+[git_state]
+format = '\([$state($progress_current/$progress_total)]($style)\)'
+style = "bg:#FCA17D"
+
+[git_status]
+format = '([\[$all_status$ahead_behind\] ]($style))'
+style = "bg:#FCA17D"
+
+[git_metrics]
+disabled = false
+
+[cmd_duration]
+format = "[ $duration ]($style)"
+style = "black bg:#86BBD8"
+
+[jobs]
+symbol = ""
+style = "bold red bg:#86BBD8"
+number_threshold = 1
+format = "[ $symbol]($style)"
+
+[time]
+disabled = false
+style = "bold white bg:#33658A"
+format = "[ $time ]($style)"
+
+[memory_usage]
+symbol = " "
+
+[python]
+format = "via [${symbol}${pyenv_prefix}(${version} )(\\($virtualenv\\) )]($style)"
+
+[conda]
+format = "via [$symbol$environment]($style) "
+
+[rust]
+symbol = " "
+
+[nodejs]
+format = "[$symbol($version )]($style)"
