@@ -141,7 +141,7 @@ exec-once = gsettings set org.gnome.desktop.interface icon-theme 'Rowaita-Adw-Li
 
 ---
 
+![Скриншот](screenshot.png)
 ## Наслаждайтесь!
 
 ---
-
