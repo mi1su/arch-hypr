@@ -2,7 +2,8 @@
 {
 	"layer": "top", // Waybar at top layer
 	"position": "top", // Waybar position (top|bottom|left|right)
-	"margin": "9 13 -10 18",
+	// "mod": "dock",
+	// "margin": "9 13 -10 18",
 	"height": 31,
 	"margin-top": 5,
 	"exclusive": true,
@@ -22,6 +23,7 @@
 	"modules-right": [
 		"hyprland/language",
 		"pulseaudio",
+		"pulseaudio#microphone",
 		"network",
 		// "bluetooth",
 		"memory",
@@ -34,7 +36,8 @@
 	"custom/menu": {
 		"format": "{icon}",
 		"format-icons": "",
-		"on-click": "wofi --show drun",
+		"on-click": "rofi -show window",
+		// "on-click": "wofi --show drun",
 		"escape": true,
 		"tooltip": false
 	},
@@ -89,7 +92,7 @@
 		"format": "{}",
 		"tooltip": true,
 		"interval": 1800,
-		"exec": "$HOME/.config/waybar/scripts/wttr.py",
+		"exec": "$HOME/.config/waybar/scripts/run_wttr.sh",
 		"return-type": "json"
 	},
 	"hyprland/language": {
@@ -117,9 +120,25 @@
 		"format-muted": " MUT",
 		"format-source": "  {volume}%",
 		"format-source-muted": "  MUT",
-		"on-click": "pavucontrol",
-		"on-click-middle": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+		"on-click": "pavucontrol -t 3",
+		"on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+		"on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
+		// "on-click-middle": "pactl set-sink @DEFAULT_SINK@ toggle",
 		"on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"tooltip-format": "{icon} {desc} | {volume}%",
+		"scroll-step": 5
+	},
+	"pulseaudio#microphone": {
+		"format": "{format_source}",
+		"rotate": 0,
+		"format-source": "",
+		"format-source-muted": "  MUT",
+		"on-click": "pavucontrol -t 4",
+		// "on-click-middle": "pactl set-source @DEFAULT_SOURCE@ toggle",
+		"on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+		"on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+		"on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
+		"tooltip-format": "{format_source} {source_desc} | {source_volume}%",
 		"scroll-step": 5
 	},
 	"network": {
@@ -136,7 +155,7 @@
 	},
 	// "bluetooth": {
 	// 	"format": "",
-	// 	"format-disabled": "󰂳 ",
+	// 	"format-disabled": "󰂳",
 	// 	"format-off": "󰂳 ",
 	// 	"format-disconnected": "󰂲 ",
 	// 	"format-connected": "<span color='#c7b8ea'>󰂱 </span>{num_connections}",
@@ -145,7 +164,7 @@
 	// 	"tooltip-format-disabled": "󰂳 Отключено",
 	// 	"tooltip-format-off": "󰂳 Выключено",
 	// 	"tooltip-format-connected": "{device_enumerate}",
-	// 	"tooltip-format-enumerate-connected": "<span color='#c7b8ea'> </span>{device_alias} <span color='#c7b8ea'>󰂄 </span>{device_battery_percentage}%",
+	// 	"tooltip-format-enumerate-connected": " {device_alias} 󰂄 {device_battery_percentage}%",
 	// 	"on-click-right": "blueman-manager"
 	// },
 	"memory": {
@@ -159,7 +178,7 @@
 	},
 	"cpu": {
 		"format": "<span color='#e1bee7'></span> {usage}%",
-		"interval": "2",
+		"interval": "2"
 	},
 	"temperature": {
 		"format": "<span color='#f38ba8'> </span>{temperatureC}°C",

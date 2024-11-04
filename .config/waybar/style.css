@@ -1,33 +1,21 @@
 /* Общие стили */
 * {
-	font-family: JetBrainsMono, Symbols Nerd Font;
-	font-weight: bold;
-	font-size: 14px;
-	min-height: 0;
+  font-family: JetBrainsMono, Symbols Nerd Font;
+  font-weight: bold;
+  font-size: 14px;
+  min-height: 0;
 }
 
-@define-color bg #1e1e2e;
-@define-color bg2 #181825;
-@define-color fg #cdd6f4;
-@define-color pink #f5c2e7;
-@define-color green #a6e3a1;
-@define-color fl #f2cdcd;
-@define-color blue #89b4fa;
-@define-color red #eba0ac;
-@define-color vl #cba6f7;
-@define-color yellow #fab387;
+@import "theme.css";
 
-
-/*
-    Общая полоска
-*/
+/* Общая полоска */
 window#waybar {
-	background-color: transparent;
-	border: none;
+  background-color: transparent;
+  border: none;
 }
 
 window#waybar.hidden {
-	opacity: 0.2;
+  opacity: 0.2;
 }
 
 /* Общие стили для всех модулей */
@@ -49,68 +37,73 @@ window#waybar.hidden {
 #backlight,
 #battery,
 #custom-power {
-	padding: 2px 10px;
-	margin: 5px;
-	color: @fg;
-	background-color: @bg2;
-	border: none;
-	border-radius: 30px;
-}
-
-/* Hover эффекты */
-#custom-menu:hover,
-#custom-menu:hover {
-	color: @fl;
-}
-
-#custom-power:hover {
-	color: @red;
+  padding: 2px 10px;
+  margin: 5px;
+  color: @foreground-primary;
+  background: @background-secondary;
+  border: none;
+  border-radius: 30px;
 }
 
 #pulseaudio.muted {
-	color: @red;
+  color: @accent-red;
 }
 
+#custom-power:hover {
+  color: @accent-red;
+}
 
+#temperature.critical {
+  color: @accent-red;
+}
+
+/* Открывающиеся окно при наведении мыши */
 /* Tooltip стили */
+/* Используем переменные */
 tooltip {
-	background: @bg;
-	margin: 20px;
-	padding: 15px;
-	border: 20px solid rgba(100, 114, 125, 0);
-	border-radius: 10px;
+  background: @background-primary;
+  margin: 20px;
+  padding: 15px;
+  border: 2px solid @border-transparent;
+  border-radius: 10px;
 }
 
 #workspaces button {
-	padding: 0 5px;
-	background-color: transparent;
-	color: @fg;
+  padding: 0 5px;
+  background-color: transparent;
+  color: @foreground-primary;
 }
 
 #workspaces button:hover {
-	color: @yellow;
-	background-color: transparent;
-	border: 2px solid @yellow;
-	box-shadow: 0 0 5px @yellow;
+  color: @accent-yellow;
+  background-color: transparent;
+  border: 2px solid @accent-yellow;
+  box-shadow: 0 0 5px @accent-yellow;
 }
 
 #workspaces button.focused {
-	color: @yellow;
-	background-color: @bg;
-	border: 2px solid @yellow;
-	/* Добавляем рамку */
-	box-shadow: 0 0 5px @yellow;
-	/* Добавляем тень */
+  color: @accent-yellow;
+  background-color: @background-primary;
+  border: 2px solid @accent-yellow;
+  /* Добавляем рамку */
+  box-shadow: 0 0 5px @accent-yellow;
+  /* Добавляем тень */
 }
 
 #workspaces button.urgent {
-	color: @red;
-	background-color: @red;
-	font-weight: bold;
-	/* Делаем текст жирным */
+  color: @accent-red;
+  background-color: @accent-red;
+  font-weight: bold;
+  /* Делаем текст жирным */
 }
 
 /* Стили для модулей при наведении мыши */
+/* Hover эффекты */
+#custom-menu:hover,
+#custom-menu:hover {
+  color: @foreground-light;
+}
+
 #clock:hover,
 #pulseaudio:hover,
 #network:hover,
@@ -118,8 +111,8 @@ tooltip {
 #cpu:hover,
 #battery:hover,
 #custom-power:hover {
-	border: 2px solid white;
-	/* Белая рамка */
-	box-shadow: 0 0 5px white;
-	/* Белая тень */
+  border: 2px solid white;
+  /* Белая рамка */
+  box-shadow: 0 0 5px white;
+  /* Белая тень */
 }

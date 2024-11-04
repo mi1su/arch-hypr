@@ -1,10 +1,11 @@
-@define-color bar-bg rgba(0, 0, 0, 0);
-
-@define-color main-bg #11111b;
-@define-color main-fg #cdd6f4;
-
-@define-color wb-act-bg #a6adc8;
-@define-color wb-act-fg #313244;
-
-@define-color wb-hvr-bg #f5c2e7;
-@define-color wb-hvr-fg #313244;
+@define-color background-primary rgba(30, 30, 46, 0.9);      /* Темный фон */
+@define-color background-secondary rgb(24, 24, 37);    /* Вторичный темный фон */
+@define-color foreground-primary rgb(205, 214, 244);   /* Основной текст */
+@define-color foreground-light rgb(242, 205, 205);     /* Светлый текст для акцентов */
+@define-color border-transparent rgba(100, 114, 125, 0.8); /* Прозрачная граница */
+@define-color accent-pink rgb(245, 194, 231);          /* Акцент розовый */
+@define-color accent-green rgb(166, 227, 161);         /* Акцент зеленый */
+@define-color accent-purple rgb(203, 166, 247);        /* Акцент фиолетовый */
+@define-color accent-blue rgb(137, 180, 250);          /* Акцент синий */
+@define-color accent-red rgb(235, 160, 172);           /* Акцент красный */
+@define-color accent-yellow rgb(250, 179, 135);        /* Акцент желтый */

@@ -1,0 +1,245 @@
+/*****----- Global Properties -----*****/
+* {
+    background: hsla(231, 15%, 18%, 0.88); /* Основной фон с прозрачностью */
+    foreground: hsla(60, 30%, 96%, 1); /* Основной цвет текста */
+    background-alt: hsla(240, 21%, 12%, 1); /* Альтернативный фон */
+    selected: hsla(265, 90%, 77%, 1); /* Цвет выделения */
+    selected-background: hsla(300, 60%, 65%, 0.7); /* Цвет фона для выделенной кнопки */
+    active: hsla(267, 83%, 81%, 1); /* Цвет активного элемента */
+    urgent: hsla(0, 100%, 66%, 1); /* Цвет срочного элемента */
+    border: hsla(225, 26%, 51%, 1); /* Цвет границы */
+
+    /* Цвета текста для различных состояний */
+    text-normal: @foreground;
+    text-selected: hsla(0, 0%, 19%, 1);  /* Белый текст для выделенных элементов */
+    text-urgent: @foreground; /*  Цвет текста для срочных элементов */
+    text-active: @foreground; /* Цвет текста для активных элементов */
+
+    spacing: 2;
+    font: "Jetbrains Mono 12";
+}
+
+/*****----- Main Window -----*****/
+window {
+    background-color: @background;
+    border: 0;
+    border-radius: 15;
+    border-color: @border;
+    padding: 15;
+    transparency: "real"; /* прозрачность */
+    location: center; /* Расположение окна */
+    anchor: center; /* Точка привязки */
+    fullscreen: false; /* Не полноэкранный режим */
+    height: 60%; /* Высота окна */
+    width: 30%; /* Ширина окна */
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    border: 0;
+    padding: 0;
+    spacing: 0px; /* Расстояние между элементами */
+    background-color: transparent; /* Прозрачный фон */
+    orientation: vertical; /* Вертикальная ориентация */
+    children: [ "inputbar", "listbox", "mode-switcher" ]; /* Дочерние элементы */
+}
+
+imagebox {
+    padding: 20px;
+    background-color: transparent;
+    orientation: vertical; /* Вертикальная ориентация */
+    children: [ "inputbar", "dummy", "mode-switcher" ]; /* Дочерние элементы */
+}
+
+/*****----- Listbox (Список приложений) -----*****/
+listbox {
+    spacing: 10px;
+    padding: 10px;
+    background-color: transparent;
+    orientation: vertical;
+    children: [ "message", "listview" ];
+}
+
+dummy {
+    background-color: transparent; /* Заполнитель с прозрачным фоном */
+}
+
+/*****----- Message -----*****/
+message {
+    border: 2px 0px 0px;
+    border-color: @border;
+    padding: 1px;
+    background-color: transparent; /* Прозрачный фон */
+}
+
+textbox {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: @background-alt; /* Используем альтернативный фон */
+    text-color: @foreground;
+    vertical-align: 0.5; /* Вертикальное выравнивание */
+    horizontal-align: 0.0; /* Горизонтальное выравнивание */
+}
+
+error-message {
+    padding: 15px;
+    border-radius: 20px;
+    background-color: @background;
+    text-color: @foreground;
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    spacing: 10px;
+    text-color: @foreground;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: @background-alt;
+    children: [ "textbox-prompt-colon", "entry", "case-indicator" ];
+}
+
+case-indicator {
+    background-color: transparent; // фон
+    text-color: var(foreground);     // цвет текста
+    margin-left: 10px;             // Отступ слева
+}
+
+textbox-prompt-colon {
+    expand:false;
+    str: "";
+    margin:0px 0.3em 0em 0em;
+    text-color: @foreground;
+    background-color: inherit; /* наследование цвета фона */
+}
+
+entry {
+    spacing: 0;
+    text-color: @foreground;
+    background-color: inherit;
+    cursor: text;
+    placeholder: "Search";
+    placeholder-color: inherit;
+}
+
+case-indicator {
+    spacing: 0;
+    text-color: @foreground;
+    background-color: transparent;
+    margin-left: 10px;
+}
+
+/*****----- Mode Switcher -----*****/
+mode-switcher{
+    enabled: true;
+    spacing: 20px;
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+button {
+    padding: 15px;
+    border-radius: 10px;
+    background-color: @background-alt;
+    text-color: inherit;
+    cursor: pointer;
+}
+
+button selected {
+    background-color: @selected-background;  /* цвет выделеноого меню */
+    text-color:@text-selected; /* Цвет текста при выделении */
+}
+
+/*****----- Listview -----*****/
+listview {
+    fixed-height: 0;
+    border: 0px;
+    border-color: @border;
+    spacing: 8px;
+    scrollbar: false;
+    padding: 2px 0px 0px;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+    reverse: false;
+    fixed-columns: true;
+    background-color: transparent; /* Прозрачный фон списка приложений */
+}
+
+/*****----- Elements -----*****/
+element {
+    border: 0;
+    padding: 8px; 
+    border-radius: 10px;
+    spacing: 15px; /* Расстояние между элементами */
+    background-color: transparent; /* Прозрачный фон */
+    text-color: @text-normal;
+    cursor: pointer;
+}
+
+element.normal.normal {
+    background-color: @background;
+    text-color: @text-normal;
+}
+
+element.normal.urgent {
+    background-color: @urgent;
+    text-color: @text-urgent;
+}
+
+element.normal.active {
+    background-color: @active;
+    text-color: @text-active;
+}
+element.selected.normal {
+    background-color: @selected;
+    text-color: @text-selected; /* Цвет текста при выделении */
+}
+
+element.selected.urgent {
+    background-color: @urgent;
+    text-color: @text-selected;
+}
+
+element.selected.active {
+    background-color: @active;
+    text-color: @text-selected;
+}
+
+element.alternate.normal {
+    background-color: @background;
+    text-color: @text-normal;
+}
+
+element.alternate.urgent {
+    background-color: @urgent;
+    text-color: @text-urgent;
+}
+
+element.alternate.active {
+    background-color: @active;
+    text-color: @text-active;
+}
+
+element-icon {
+    background-color: transparent;
+    text-color: inherit;
+    size: 32px; /* Размер иконки */
+    cursor: inherit;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+}
+
+/*****----- Scrollbar -----*****/
+scrollbar {
+    width: 2px;
+    border: 0;
+    handle-color: @foreground; /* Цвет ручки скроллбара */
+    handle-width: 8px;
+    padding: 0;
+}

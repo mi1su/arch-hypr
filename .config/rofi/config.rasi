@@ -1,25 +1,22 @@
 configuration {
-    // Режим запуска
-    drun-display-format: "{name}";
-    drun-show-icons: true;
+	modi:                       "drun,run,filebrowser,window";
+    show-icons:                 true;
+    display-drun:               "APPS";
+    display-run:                "RUN";
+    display-filebrowser:        "FILES";
+    display-window:             "WINDOW";
+	drun-display-format:        "{name}";
+	window-format:              "{w} · {c} · {t}";
 
-    // Размеры
-    width: 30%;
-    height: 30%;
-    
-    // Положение
-    location: 0; // центр
+  // Поиск и сортировка
+  case-sensitive: false;  // включает/выключает поиск с учетом регистра
+  matching: "fuzzy";        // режим сопоставления: normal, fuzzy или regex
+  sort: true;             // порядок сортировки: true для включения сортировки по алфавиту
 
-    // Поиск и сортировка
-    case-sensitive: false;  // включает/выключает поиск с учетом регистра
-    matching: "fuzzy";        // режим сопоставления: normal, fuzzy или regex
-    sort: true;             // порядок сортировки: true для включения сортировки по алфавиту
-    
-    // Иконки
-    show-icons: true;       // включает/выключает отображение иконок
-
-    // Прочие настройки
-    always-show: true;      // всегда показывать все результаты
-    print-command: true;    // вывод команды в терминал перед выполнением
-    line-wrap: true;        // режим переноса строки
+  // Прочие настройки
+  line-wrap: true;        // режим переноса строки
+  // always-show: true; // всегда показывать все результаты Включать только при необходимости, обычно не требуется
+  // print-command: true;  // вывод команды в терминал перед выполнением Включать только для отладки
 }
+@import "colors"
+@theme "theme"

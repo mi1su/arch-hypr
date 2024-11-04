@@ -1,0 +1,141 @@
+* {
+  background-image: none;
+  font-family: JetBrainsMono, monospace;
+  font-size: 14pt;
+}
+
+@import "theme.css";
+
+window {
+  background-color: @background-primary; /* Фон окна */
+  color: @text-main; /* Цвет текста в окне */
+}
+
+button {
+  background-color: @background-secondary; /* Фон кнопки */
+  border: none; /* Убираем границы */
+  border-radius: 10px; /* Закругленные углы */
+  color: @text-main; /* Цвет текста кнопки */
+  opacity: 0.9; /* Начальная прозрачность */
+  box-shadow: none; /* Убираем тень */
+  background-repeat: no-repeat; /* Фоновое изображение не повторяется */
+  background-position: center; /* Фоновое изображение по центру */
+  background-size: 30%; /* Размер фонового изображения */
+  text-shadow: none; /* Убираем тень текста */
+  transition: background-color 0.2s ease-in-out; /* Плавное изменение цвета фона */
+}
+
+button:hover {
+  background-color: @button-hover-bg; /* Цвет фона при наведении */
+  color: @button-hover-text; /* Цвет текста при наведении */
+  opacity: 0.7; /* Прозрачность при наведении */
+  background-size: 50%; /* Увеличиваем размер фона при наведении */
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.28, 1.682); /* Плавный переход всех свойств */
+}
+
+button:active {
+  background-color: @button-active-bg; /* Цвет фона при нажатии */
+  color: @button-active-text; /* Цвет текста при нажатии */
+}
+
+button:focus {
+  outline: none; /* Убираем обводку при фокусе */
+  background-size: 40%; /* Размер фона при фокусе */
+}
+
+/* Применение фонов для кнопок с изображениями */
+#lock {
+  background-image: image(
+    url("$HOME/.config/wlogout/icons/lock_white.png"),
+    url("/usr/share/wlogout/icons/lock.png"),
+    url("/usr/local/share/wlogout/icons/lock.png")
+  );
+}
+
+#lock:focus {
+  background-image: image(
+    url("$HOME/.config/wlogout/icons/lock_black.png"),
+    url("/usr/share/wlogout/icons/lock.png"),
+    url("/usr/local/share/wlogout/icons/lock.png")
+  );
+}
+
+#logout {
+  background-image: image(
+    url("$HOME/.config/wlogout/icons/logout_white.png"),
+    url("/usr/share/wlogout/icons/logout.png"),
+    url("/usr/local/share/wlogout/icons/logout.png")
+  );
+}
+
+#logout:focus {
+  background-image: image(
+    url("$HOME/.config/wlogout/icons/logout_black.png"),
+    url("/usr/share/wlogout/icons/logout.png"),
+    url("/usr/local/share/wlogout/icons/logout.png")
+  );
+}
+
+#suspend {
+  background-image: image(
+    url("$HOME/.config/wlogout/icons/suspend_white.png"),
+    url("/usr/share/wlogout/icons/suspend.png"),
+    url("/usr/local/share/wlogout/icons/suspend.png")
+  );
+}
+
+#suspend:focus {
+  background-image: image(
+    url("$HOME/.config/wlogout/icons/suspend_black.png"),
+    url("/usr/share/wlogout/icons/suspend.png"),
+    url("/usr/local/share/wlogout/icons/suspend.png")
+  );
+}
+
+#shutdown {
+  background-image: image(
+    url("$HOME/.config/wlogout/icons/shutdown_white.png"),
+    url("/usr/share/wlogout/icons/shutdown.png"),
+    url("/usr/local/share/wlogout/icons/shutdown.png")
+  );
+}
+
+#shutdown:focus {
+  background-image: image(
+    url("$HOME/.config/wlogout/icons/shutdown_black.png"),
+    url("/usr/share/wlogout/icons/shutdown.png"),
+    url("/usr/local/share/wlogout/icons/shutdown.png")
+  );
+}
+
+#reboot {
+  background-image: image(
+    url("$HOME/.config/wlogout/icons/reboot_white.png"),
+    url("/usr/share/wlogout/icons/reboot.png"),
+    url("/usr/local/share/wlogout/icons/reboot.png")
+  );
+}
+
+#reboot:focus {
+  background-image: image(
+    url("$HOME/.config/wlogout/icons/reboot_black.png"),
+    url("/usr/share/wlogout/icons/reboot.png"),
+    url("/usr/local/share/wlogout/icons/reboot.png")
+  );
+}
+
+#hibernate {
+  background-image: image(
+    url("$HOME/.config/wlogout/icons/hibernate_white.png"),
+    url("/usr/share/wlogout/icons/hibernate.png"),
+    url("/usr/local/share/wlogout/icons/hibernate.png")
+  );
+}
+
+#hibernate:focus {
+  background-image: image(
+    url("$HOME/.config/wlogout/icons/hibernate_black.png"),
+    url("/usr/share/wlogout/icons/hibernate.png"),
+    url("/usr/local/share/wlogout/icons/hibernate.png")
+  );
+}
