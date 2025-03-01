@@ -10,3 +10,5 @@ syntax on
 set termguicolors
 colorscheme default
 set wildmenu
+set noerrorbells
+set visualbell

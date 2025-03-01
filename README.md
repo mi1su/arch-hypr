@@ -191,7 +191,55 @@ zsh 5.9-5
 ```bash
 sudo pacman -S acpi acpid acpilight blueman bluez bluez-utils brightnessctl chromium code dnscrypt-proxy firefox fish git htop neovim networkmanager nvidia-dkms openvpn pavucontrol python pipewire telegram-desktop xdg-desktop-portal xdg-desktop-portal-hyprland
 ```
+sudo pacman -S easyeffects realtime-privileges ladspa
+yay -S lsp-plugins
 
+easyeffects
+Во вкладке Effects выберите:
+
+Auto Gain (автоматическое усиление тихих источников),
+
+Compressor (сжатие динамического диапазона),
+
+Limiter (защита от перегрузки).
+
+Настройте параметры:
+
+
+Что дает изменение Target в Auto Gain?
+Target: -14 dB — стандартный уровень для стриминга (YouTube, Twitch), чтобы звук был "средней" громкости.
+
+Target: -10 dB — звук станет громче, но есть риск искажений (хрипы, клиппинг), особенно если исходный аудиопоток уже нормализован.
+
+Рекомендация: Начните с -12 dB, проверьте качество. Если звук чистый, можно поднять до -10 dB. Если слышны артефакты — вернитесь к -14 dB.
+
+3. Настройка Compressor и Limiter
+Compressor:
+Threshold: -30 dB — уровень, выше которого компрессор начинает сжимать звук. Чем ниже (например, -40 dB), тем агрессивнее сжатие (тихие звуки станут громче).
+
+Ratio: 4:1 — степень сжатия. Например, при 4:1 сигнал выше порога уменьшается в 4 раза. Для сильного выравнивания можно поставить 6:1.
+
+Attack: 20 ms — время реакции на превышение порога. Меньшие значения (например, 10 ms) быстрее "зажимают" пики.
+
+Release: 100 ms — время восстановления. Большие значения (например, 200 ms) делают сжатие плавнее.
+
+Limiter:
+Threshold: -3 dB — максимальный уровень громкости. Если поставить -1 dB, звук станет чуть громче, но увеличится риск клиппинга.
+
+4. Пример безопасной настройки для максимальной громкости
+yaml
+Copy
+Auto Gain:
+  Target: -12 dB
+
+Compressor:
+  Threshold: -35 dB
+  Ratio: 5:1
+  Attack: 10 ms
+  Release: 150 ms
+
+Limiter:
+  Threshold: -2 dB
 ---
 
 ## Шрифты
@@ -214,7 +262,7 @@ sudo pacman -S acpi acpid acpilight blueman bluez bluez-utils brightnessctl chro
 yay -S nerd-fonts-complete
 yay -S ttf-font-awesome
 yay -S ttf-material-design-iconic-font
-
+sudo pacman -S noto-fonts-emoji
 ```
 
 Однако **Nerd Fonts** лучше скачать с официального сайта: [Nerd Fonts Releases](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/NerdFontsSymbolsOnly.zip).

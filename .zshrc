@@ -125,3 +125,5 @@ unsetopt SHARE_HISTORY
 setopt INC_APPEND_HISTORY_TIME
 ## Отключение звукового сигнала при ошибках
 setopt  NO_BEEP
+
+export MINIKUBE_HOME="/mnt/sundry/minikube"

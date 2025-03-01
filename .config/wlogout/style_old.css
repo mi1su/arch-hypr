@@ -1,0 +1,112 @@
+* {
+    background-image: none;
+    font-family: CaskaydiaCove Nerd Font, monospace;
+    font-size: 12pt;
+}
+
+/*@import "$HOME/.config/waybar/theme.css";*/
+
+window {
+    /*background-color: transparent;*/
+    color: #cdd6f4; 
+    /*background-color: rgba(17, 17, 27, .88);*/
+    background-color: rgba(46, 52, 64, 0.9);
+}
+
+/*button {*/
+/*    background-repeat: no-repeat;*/
+/*    background-position: center;*/
+/*    background-size: 60%;*/
+/*    border: none;*/
+/*    color: #ced7f4;*/
+/*    text-shadow: none;*/
+/*    border-radius: 20px 20px 20px 20px;*/
+/*    background-color: rgba(30, 30, 46, 0);*/
+/*    margin: 5px;*/
+/*    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;*/
+/*}*/
+
+button {
+    background-color: #2e3440;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    color: #5e81ac;
+}
+
+button:hover {
+    background-color: rgba(49, 50, 68, 0.1);
+}
+
+/* Второй стиль
+button:focus, button:active, button:hover {
+    background-color: #4c566a;
+    color: #81a1c1;
+    outline-style: none;
+}
+*/
+
+#lock {
+    background-image: image(url("$HOME/.config/wlogout/icons/lock_white.png"), url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+    border-radius: 0px 0px 0px 0px;
+    /*border-radius: 10px 0px 0px 10px;*/
+    margin: 5px 0px 5px 5px;
+    /*background-size: 70%;*/
+}
+
+#lock:focus {
+    background-image: image(url("$HOME/.config/wlogout/icons/lock_black.png"), url("/usr/share/wlogout/icons/lock_black.png"), url("/usr/local/share/wlogout/icons/lock_black.png"));
+}
+
+#logout {
+    background-image: image(url("$HOME/.config/wlogout/icons/logout_white.png"), url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+    border-radius: 0px 0px 0px 0px;
+    margin: 5px 0px 5px 0px;
+}
+
+#logout:focus {
+    background-image: image(url("$HOME/.config/wlogout/icons/logout_black.png"), url("/usr/share/wlogout/icons/logout_black.png"), url("/usr/local/share/wlogout/icons/logout_black.png"));
+}
+
+#suspend {
+    background-image: image(url("$HOME/.config/wlogout/icons/suspend_white.png"), url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+    border-radius: 0px 0px 0px 0px;
+    margin: 5px 0px 5px 0px;
+}
+
+#suspend:focus {
+    background-image: image(url("$HOME/.config/wlogout/icons/suspend_black.png"), url("/usr/share/wlogout/icons/suspend_black.png"), url("/usr/local/share/wlogout/icons/suspend_black.png"));
+}
+
+#shutdown {
+    background-image: image(url("$HOME/.config/wlogout/icons/shutdown_white.png"), url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+    border-radius: 0px 0px 0px 0px;
+    margin: 5px 0px 5px 0px;
+}
+
+#shutdown:focus {
+    background-image: image(url("$HOME/.config/wlogout/icons/shutdown_black.png"), url("/usr/share/wlogout/icons/shutdown_black.png"), url("/usr/local/share/wlogout/icons/shutdown_black.png"));
+}
+
+#reboot {
+    background-image: image(url("$HOME/.config/wlogout/icons/reboot_white.png"), url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+    border-radius: 0px 10px 10px 0px;
+    margin: 5px 5px 5px 0px;
+}
+
+#reboot:focus {
+    background-image: image(url("$HOME/.config/wlogout/icons/reboot_black.png"), url("/usr/share/wlogout/icons/reboot_black.png"), url("/usr/local/share/wlogout/icons/reboot_black.png"));
+}
+
+#hibernate {
+    background-image: image(url("$HOME/.config/wlogout/icons/hibernate_white.png"), url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+    border-radius: 0px 0px 0px 0px;
+    margin: 5px 0px 5px 0px;
+}
+
+#hibernate:focus {
+    background-image: image(url("$HOME/.config/wlogout/icons/hibernate_black.png"), url("/usr/share/wlogout/icons/hibernate_black.png"), url("/usr/local/share/wlogout/icons/hibernate_black.png"));
+}
