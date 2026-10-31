@@ -127,3 +127,4 @@ setopt INC_APPEND_HISTORY_TIME
 setopt  NO_BEEP
 
 export MINIKUBE_HOME="/mnt/sundry/minikube"
+[ -s "/opt/adguard-cli/bash-completion.sh" ] && \. "/opt/adguard-cli/bash-completion.sh"
