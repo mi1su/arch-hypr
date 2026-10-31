@@ -1,0 +1,7 @@
+require("hypr_arch.monitors")
+require("hypr_arch.env")
+require("hypr_arch.config")
+require("hypr_arch.animations")
+require("hypr_arch.autostart")
+require("hypr_arch.binds")
+require("hypr_arch.rules")

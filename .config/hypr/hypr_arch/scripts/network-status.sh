@@ -1,14 +1,12 @@
 #!/bin/bash
-# Получаем статус всех устройств
-connection_status=$(nmcli -t -f STATE device | grep -v '^disconnected')
 
-if [ -n "$connection_status" ]; then
-    # Получаем имя активного соединения
-    active_connection=$(nmcli -t -f NAME,DEVICE,STATE connection show --active | grep 'connected' | cut -d':' -f1)
-    active_device=$(nmcli -t -f DEVICE,STATE device | grep 'connected' | cut -d':' -f1)
+active_info=$(nmcli -t -f DEVICE,TYPE,STATE device | grep ":connected$" | grep -v ":loopback:")
 
-    echo "Connected to: $active_connection on device: $active_device"
+if [ -n "$active_info" ]; then
+  active_device=$(echo "$active_info" | cut -d':' -f1 | head -n 1)
+  active_connection=$(nmcli -t -f GENERAL.CONNECTION device show "$active_device" | cut -d':' -f2)
+
+  echo "Connected to: $active_connection on device: $active_device"
 else
-    echo "Disconnected"
+  echo "Disconnected"
 fi
-
